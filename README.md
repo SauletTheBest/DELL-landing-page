@@ -68,6 +68,20 @@
 
 ---
 
+### 📈 Подтверждение сбора данных (Analytics Proof)
+
+<div align="center">
+  <img src="screenshots/google_analytics.png" alt="Google Analytics 4 Realtime Events" width="90%" />
+  <p><i>Google Analytics 4: Отслеживание кастомных событий cta_click в реальном времени</i></p>
+  
+  <br />
+  
+  <img src="screenshots/yandex_metrics.png" alt="Яндекс.Метрика Dashboard" width="90%" />
+  <p><i>Яндекс.Метрика: Подключенный счетчик и зафиксированные визиты</i></p>
+</div>
+
+---
+
 ## 🛠 Технологический стек
 
 - **Frontend:** HTML5, CSS3 (Variables, Flexbox, Grid), Vanilla JavaScript (ES6+)
@@ -86,7 +100,7 @@ dell-landing/
 ├── js/
 │   └── main.js         # Обработка событий и передача кликов в dataLayer
 ├── images/             # Иконки бренда и фото ноутбуков
-├── screenshots/        # Скриншоты интерфейса для README
+├── screenshots/        # Скриншоты интерфейса и дашбордов аналитики
 ├── index.html          # Главная страница с тегами GTM и разметкой
 └── README.md           # Документация проекта
 ```
