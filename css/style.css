@@ -1,0 +1,387 @@
+/* =========================================
+   1. БАЗОВЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ
+========================================= */
+:root {
+    --dell-blue: #0076CE;
+    --dell-blue-hover: #005A9E;
+    --bg-dark: #0b0f19; /* Глубокий темный фон */
+    --text-main: #f5f5f7;
+    --glass-bg: rgba(11, 15, 25, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Плавная прокрутка к секциям */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   2. ШАПКА САЙТА (HEADER) С ГЛАССМОРФИЗМОМ
+========================================= */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Эффект матового стекла */
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-main);
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: #a1a1a6;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--dell-blue);
+}
+
+/* =========================================
+   3. ГЛАВНЫЙ ЭКРАН (HERO)
+========================================= */
+.hero {
+    /* Отступ сверху равен высоте шапки, чтобы текст не прятался под ней */
+    padding-top: 150px; 
+    padding-bottom: 100px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at center, #1a233a 0%, var(--bg-dark) 70%);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    /* Градиентный текст для премиальности */
+    background: linear-gradient(90deg, #fff, #a1a1a6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #a1a1a6;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+/* =========================================
+   4. КНОПКИ (С МИКРОАНИМАЦИЕЙ)
+========================================= */
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 30px; /* Скругленная кнопка */
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--dell-blue);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 118, 206, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--dell-blue-hover);
+    transform: translateY(-3px); /* Кнопка слегка приподнимается */
+    box-shadow: 0 8px 25px rgba(0, 118, 206, 0.5);
+}
+
+/* =========================================
+   5. АДАПТИВНОСТЬ (ДЛЯ ТЕЛЕФОНОВ)
+========================================= */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================
+   6. ОБЩИЕ СТИЛИ СЕКЦИЙ
+========================================= */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #a1a1a6;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    font-size: 18px;
+}
+
+/* =========================================
+   7. СЕКЦИЯ О БРЕНДЕ (ABOUT)
+========================================= */
+.about {
+    background-color: var(--bg-dark);
+}
+
+.about-grid {
+    display: grid;
+    /* CSS Grid автоматически адаптирует карточки под экран */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.about-card h3 {
+    color: var(--dell-blue);
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+/* =========================================
+   8. СЕКЦИЯ ПРОДУКТЫ (PRODUCTS)
+========================================= */
+.products {
+    background-color: #0d121f; /* Чуть светлее фон для контраста с About */
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.product-card {
+    background: var(--bg-dark);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 118, 206, 0.3);
+}
+
+.product-image {
+    height: 250px;
+    /* Временный градиент-заглушка вместо фото */
+    background: linear-gradient(45deg, #1a233a, #2a3553);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.product-info {
+    padding: 30px;
+}
+
+.product-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    color: #a1a1a6;
+    margin-bottom: 20px;
+    min-height: 50px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dell-blue);
+    margin-bottom: 20px;
+}
+/* =========================================
+   9. ЛОГОТИП И ИКОНКА
+========================================= */
+.logo {
+    display: flex;
+    align-items: center; /* Выравнивает картинку и текст по центру по вертикали */
+    gap: 12px; /* Расстояние между иконкой и текстом */
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 40px; /* Размер иконки */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 200; 
+    letter-spacing: 1px; 
+    color: var(--text-main);
+    text-transform: bold; 
+}
+
+
+.sale-banner {
+    background: linear-gradient(135deg, rgba(0, 118, 206, 0.2) 0%, rgba(11, 15, 25, 0.9) 100%), #1a233a;
+    border: 1px solid rgba(0, 118, 206, 0.4);
+    border-radius: 30px;
+    padding: 60px 40px;
+    text-align: center;
+}
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(0, 118, 206, 0.2);
+    border: 1px solid var(--dell-blue);
+    color: var(--dell-blue);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.sale-banner h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+.sale-banner p {
+    color: #a1a1a6;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-size: 18px;
+}
+/* =========================================
+   11. ПОДВАЛ (FOOTER)
+========================================= */
+.footer {
+    background-color: #070a12;
+    padding: 60px 0 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.footer-brand p {
+    color: #a1a1a6;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer-links h4, .footer-official h4 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+.footer-links a {
+    color: #a1a1a6;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: var(--dell-blue);
+}
+.footer-official p {
+    color: #a1a1a6;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--dell-blue);
+    color: var(--dell-blue);
+    padding: 10px 20px;
+}
+.btn-secondary:hover {
+    background: var(--dell-blue);
+    color: #fff;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #6e6e73;
+    font-size: 13px;
+}
