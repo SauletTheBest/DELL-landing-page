@@ -14,7 +14,7 @@
 
 ## 🌐 Живая демо-версия (Live Demo)
 
-🔗 **[Открыть проект на GitHub Pages](https://sauletthebest.github.io/dell-landing/)**
+🔗 **[Открыть проект на GitHub Pages](https://sauletthebest.github.io/DELL-landing-page/)**
 
 ---
 
