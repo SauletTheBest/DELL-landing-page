@@ -1,4 +1,4 @@
-# 💻 DELL Technologies - Commercial Promo Landing Page
+## 💻 DELL Technologies - Commercial Promo Landing Page
 
 > Современный, адаптивный промо-лендинг для бренда **DELL** со сквозной интеграцией аналитических систем (**Google Analytics 4**, **Google Tag Manager**, **Яндекс.Метрика с Вебвизором**) и отслеживанием целевых действий пользователей (CTA).
 
